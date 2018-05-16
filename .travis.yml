@@ -1,0 +1,11 @@
+#env:
+#  global:
+#  - 'SFTP_USER=[user]'
+#  - 'SFTP_PASSWORD=[password]'
+#  - 'SFTP_KEY=[base64-encoded-rsa-key]'
+after_success:
+#- echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+- ls
+#- curl -T index.html
+#       --key /tmp/sftp_rsa
+#       sftp://${SFTP_USER}:${SFTP_PASSWORD}@120.79.211.49/www/index.html
