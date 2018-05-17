@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - 'node'
 after_success:
-  - echo "${rsa}" | base64 --decode >/tmp/rsa
+  - echo "${rsa}" | base64 >/tmp/rsa
   - cat /tmp/rsa
-#- curl -T index.html
-#       --key /tmp/rsa
-#       sftp://${user}:${password}@120.79.211.49/www/index.html
+  - curl -T index.html
+         --key /tmp/rsa
+         sftp://${user}:${password}@120.79.211.49/www/index.html
