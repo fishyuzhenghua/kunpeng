@@ -8,6 +8,7 @@ env:
   - 'SFTP_KEY=[base64-encoded-rsa-key]'
 after_success:
 - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-- curl -T index.html
-       --key /tmp/sftp_rsa
-       sftp://${SFTP_USER}:${SFTP_PASSWORD}@120.79.211.49/www/index.html
+#- curl -T index.html
+#       --key /tmp/sftp_rsa
+#       sftp://${SFTP_USER}:${SFTP_PASSWORD}@120.79.211.49/www/index.html
+- sftp
