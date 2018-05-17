@@ -7,4 +7,5 @@ env:
   - 'SFTP_PASSWORD=[password]'
 after_success:
 - curl -T index.html
-       sftp://${SFTP_USER}:${SFTP_PASSWORD}@120.79.211.49/www/index.html
+       -u ${SFTP_USER}:${SFTP_PASSWORD}
+       sftp://120.79.211.49/www/index.html
