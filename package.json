@@ -1,0 +1,11 @@
+{
+  "name": "fishyuzhenghua",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": "https://github.com/fishyuzhenghua/kunpeng.git",
+  "author": "ZhengHuaYu <footballyu@126.com>",
+  "license": "MIT"
+}
