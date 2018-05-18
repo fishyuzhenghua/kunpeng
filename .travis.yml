@@ -6,10 +6,8 @@ cache:
     - node_modules
 after_success:
   - echo "${rsa}" | base64 --decode >/tmp/rsa
-  - tar -czvf /tmp/dist.tar dist
-  - curl --ftp-create-dirs
-         -T /tmp/dist.tar
-# -k配置不校验ssl证书
+  - tar -czvf /tmp/dist.tar /dist
+  - curl -T /tmp/dist.tar
          -k
          --key /tmp/rsa
-         sftp://${user}@120.79.211.49/www/
+         sftp://mysftp@120.79.211.49/www/
