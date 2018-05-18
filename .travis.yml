@@ -1,8 +1,15 @@
 language: node_js
 node_js:
-  - 'node'
+  - "node"
+cache:
+  directories:
+    - node_modules
 after_success:
-  - echo "${rsa}" | base64 >/tmp/rsa
-  - curl -T index.html
+  - echo "${rsa}" | base64 --decode >/tmp/rsa
+  - tar -czvf /tmp/dist.tar dist
+  - curl --ftp-create-dirs
+         -T /tmp/dist.tar
+# -k配置不校验ssl证书
+         -k
          --key /tmp/rsa
-         sftp://mysftp@120.79.211.49/www/index.html
+         sftp://${user}@120.79.211.49/www/
