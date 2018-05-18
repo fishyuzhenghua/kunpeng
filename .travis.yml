@@ -5,6 +5,7 @@ cache:
   directories:
     - node_modules
 after_success:
+  - lsb_release -a
   - echo "${rsa}" | base64 --decode >/tmp/rsa
   - tar -czvf /tmp/dist.tar dist
   - curl --version
